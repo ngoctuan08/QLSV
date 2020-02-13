@@ -22,16 +22,16 @@ This is my first Spring Boot project
 
 * User table:
 
-  DROP TABLE IF EXISTS `user`;
+  DROP TABLE IF EXISTS `users`;
 
-  CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  CREATE TABLE `users` (
+  `users_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` char(80) NOT NULL,
   PRIMARY KEY (`user_id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-  INSERT INTO `user` (username,password) VALUES ('ngoctuan08','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K');
+  INSERT INTO `users` (username,password) VALUES ('ngoctuan08','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K');
 
 * Role table:
 
@@ -57,8 +57,8 @@ This is my first Spring Boot project
   
   KEY `FK_ROLE_idx` (`role_id`),
   
-  CONSTRAINT `FK_USER_05` FOREIGN KEY (`user_id`) 
-  REFERENCES `user` (`id`) 
+  CONSTRAINT `FK_USER` FOREIGN KEY (`user_id`) 
+  REFERENCES `users` (`id`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION,
   
   CONSTRAINT `FK_ROLE` FOREIGN KEY (`role_id`) 
