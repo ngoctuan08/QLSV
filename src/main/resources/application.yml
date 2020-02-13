@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/student?autoReconnect=true
-    username: postgres
+    url: jdbc:sqlserver://localhost:1433;databaseName=student
+    username: sa
     password: 081199th
-    driverClassName: org.postgresql.Driver
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
+      dialect: org.hibernate.dialect.SQLServer2019Dialect
       ddl-auto: none
       jdbc:
          lob:
